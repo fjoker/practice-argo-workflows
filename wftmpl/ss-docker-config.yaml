@@ -1,0 +1,15 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: docker-config
+  namespace: argo-system
+spec:
+  encryptedData:
+    config.json: AgAGnmtkAhVMPQLxMcXVXa6uWjzPMeKH+j9SJvr1UbQ1kM1ZYJo50sUOhAMqgWNAD1VcJJorZZggDpoTvQvR/ixXiytctsHE8BCPZn3K9QXJ5aPZRA46C8e/LLgymuE5ZMmQ8dyW89Y7avu2FK2w+ROO0EPhc+vfEwHMUiUdGCgwJe+pD99O5038bLH2vRG5SfbonwW1rfkimWVxN/9zXTDIV4yp07Sz3sxoTM/6r9hJVdWQT0kSz/HgZIpf+sum0tVHoPDZlnDYPO4y+e6bJkN7TtdLt7uD1Y64HIVws+ilj1LCpUG5bY8lgl8/rtNDqZlGeX+5zSu70agxVVxS8pRq3Ot6MEb5bkraQyg84EZAU2ozV0aJXQgtVig90MvIT5jJDzz71VKSqHYnjfJxvfrz9rsXTgvWMxWhAbUFXA2gIBGl2SMLAPk2f2XIesVtv8EXWu3zNtXxOvvZIk+xqnyNk6KMBABfQoDnJ6L4emXi/CQDdS2mQyO1JZaspLcI2HWhhuB62tKc4Mlc09BxNjxOf+43SvozIB+0Vt4jjXVt+qFXzrap08sZzYMRqaK3zUqQdhaPSoMrVVxDWQUaOAYRNaH117jxrI6ZT77ynIq6i9EG0MAWBbeYdDnmixuIZh4ZjRF3zCQWdJpSKItTWlS+xn8WNpjlV/VPwM/MWT182X3RjZHiZ3N0+qZCdEsnCxQ2lZbwCgugF74Nexk2zQKEZOAvDrpfdbURJWh7zgjtm9p4HZOU8oPQjpDH+Yez7ewQ8KtaWCHScHRoRnt+FQ6gwFtX1pxZ7+tmjDexN1wahhu2qHAum55M0lFJ5223kePe6u3rkWk2Wc3ZZhE6qGjGWqRFZg==
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: docker-config
+      namespace: argo-system

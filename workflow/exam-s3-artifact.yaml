@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: input-artifact-s3-
+spec:
+  entrypoint: input-artifact-s3-example
+  templates:
+  - name: input-artifact-s3-example
+    inputs:
+      artifacts:
+      - name: my-art
+        path: /my-artifact
+        s3:
+          # Use the corresponding endpoint depending on your S3 provider:
+          #   AWS: s3.amazonaws.com
+          #   GCS: storage.googleapis.com
+          #   Minio: my-minio-endpoint.default:9000
+          endpoint: s3.amazonaws.com
+          bucket: argo-workflows.s3.modusign.co.kr
+          region: ap-northeast-2
+          key: README.md
+          # accessKeySecret and secretKeySecret are secret selectors.
+          # It references the k8s secret named 'my-s3-credentials'.
+          # This secret is expected to have have the keys 'accessKey'
+          # and 'secretKey', containing the base64 encoded credentials
+          # to the bucket.
+          accessKeySecret:
+            name: my-s3-credentials
+            key: accessKey
+          secretKeySecret:
+            name: my-s3-credentials
+            key: secretKey
+    container:
+      image: debian:latest
+      command: [sh, -c]
+      args: ["ls -l /my-artifact"]
